@@ -5,61 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Siddhi Vinayak Traders</title>
   <style>
-    /* Smooth scrolling */
+    /* Smooth scroll */
     html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #333; }
 
-    /* Reset & base */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Header/Nav */
+    /* Logo/Header */
     header {
       background: #111;
-      color: #fff;
-      padding: 1rem 0;
-    }
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 1rem;
+      text-align: center;
     }
     .logo {
+      color: #fff;
       font-size: 1.5rem;
       font-weight: bold;
       letter-spacing: 1px;
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav a {
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, #222, #444);
-      color: #fff;
-      text-align: center;
-      padding: 4rem 1rem;
+      position: relative;
+      width: 100%;
+      min-height: 60vh;
+      background: linear-gradient(135deg, #222, #444),
+                  url('https://i.ibb.co/your-hero-image.jpg') center center no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
     }
     .hero button {
       background: #e55400;
@@ -71,76 +45,20 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-    .hero button:hover {
-      background: #ff7733;
-    }
+    .hero button:hover { background: #ff7733; }
 
-    /* Sections */
-    section {
-      padding: 3rem 0;
-    }
+    /* Container */
+    .container { width: 90%; max-width: 1200px; margin: auto; }
+
+    /* Sections titles */
     section h2 {
       text-align: center;
       font-size: 2rem;
-      margin-bottom: 2rem;
+      margin: 2rem 0 1rem;
       color: #222;
     }
 
-    /* Products Grid */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .product-card {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    /* leave this in place */
-    .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-    .product-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .product-card .content {
-      padding: 1rem;
-    }
-    .product-card h3 {
-      margin-bottom: 0.5rem;
-    }
-
-    /* About Us */
-    .about {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-      text-align: center;
-    }
-    .about img {
-      max-width: 250px;
-      border-radius: 12px;
-    }
-    .about-text {
-      max-width: 600px;
-    }
-
-    /* Contact */
-    .contact-list {
-      list-style: none;
-      font-size: 1rem;
-      line-height: 2;
-      text-align: center;
-    }
-
-    /* Fade-in animation */
+    /* Fade-in */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -151,119 +69,147 @@
       transform: translateY(0);
     }
 
-    /* *** Fix: re-enable lift-on-hover after fade-in *** */
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .product-card .content {
+      padding: 1rem;
+    }
+    .product-card h3 { margin-bottom: .5rem; }
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    /* Ensure hover works after fade-in */
     .product-card.fade-in.visible:hover {
       transform: translateY(-10px);
     }
 
+    /* About Us */
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding-bottom: 3rem;
+    }
+    .about img {
+      max-width: 250px;
+      border-radius: 12px;
+    }
+    .about-text { max-width: 600px; text-align: center; }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      line-height: 2;
+      text-align: center;
+      padding-bottom: 3rem;
+    }
+
     /* Breakpoints */
     @media (min-width: 768px) {
-      .about {
-        flex-direction: row;
-        text-align: left;
-      }
+      .about { flex-direction: row; text-align: left; }
+      .about-text { text-align: left; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Logo/Header -->
   <header class="fade-in">
-    <div class="container">
-      <div class="logo">Siddhi Vinayak Traders</div>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <div class="logo">Siddhi Vinayak Traders</div>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="hero fade-in">
-    <div class="container">
-      <h1>Your Reliable Hardware Partner</h1>
-      <button onclick="location.href='#products'">Explore Our Products</button>
-    </div>
+  <section class="hero fade-in">
+    <button onclick="location.href='#products'">Explore Our Products</button>
   </section>
 
   <!-- Products -->
-  <section id="products" class="fade-in">
-    <div class="container">
-      <h2>Products</h2>
-      <div class="products-grid">
-        <div class="product-card fade-in">
-          <img src="https://i.ibb.co/Q3wQCMmp/custom-color.jpg" alt="Custom Color Selection">
-          <div class="content">
-            <h3>Custom Color Selection</h3>
-            <p>Choose any color you can imagine, our smart mixing machines deliver the exact shade instantly!</p>
-          </div>
+  <section id="products" class="container fade-in">
+    <h2>Products</h2>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <img src="https://i.ibb.co/Q3wQCMmp/custom-color.jpg" alt="Custom Color Selection">
+        <div class="content">
+          <h3>Custom Color Selection</h3>
+          <p>Choose any color you can imagine, our smart mixing machines deliver the exact shade instantly!</p>
         </div>
-        <div class="product-card fade-in">
-          <img src="https://i.ibb.co/277X9Pgt/pipes.jpg" alt="Pipes">
-          <div class="content">
-            <h3>Pipes</h3>
-            <p>High-quality pipes for reliable water flow, strong and long-lasting for every home.</p>
-          </div>
+      </div>
+      <div class="product-card fade-in">
+        <img src="https://i.ibb.co/277X9Pgt/pipes.jpg" alt="Pipes">
+        <div class="content">
+          <h3>Pipes</h3>
+          <p>High-quality pipes for reliable water flow, strong and long-lasting for every home.</p>
         </div>
-        <div class="product-card fade-in">
-          <img src="https://i.ibb.co/dwxHcT6Y/tiles.jpg" alt="Tiles">
-          <div class="content">
-            <h3>Tiles</h3>
-            <p>Stylish and durable tiles to make your floors and walls stand out beautifully.</p>
-          </div>
+      </div>
+      <div class="product-card fade-in">
+        <img src="https://i.ibb.co/dwxHcT6Y/tiles.jpg" alt="Tiles">
+        <div class="content">
+          <h3>Tiles</h3>
+          <p>Stylish and durable tiles to make your floors and walls stand out beautifully.</p>
         </div>
-        <div class="product-card fade-in">
-          <img src="https://i.ibb.co/B5RVsn5r/home-hardware.jpg" alt="Everything for Your Home">
-          <div class="content">
-            <h3>Everything for Your Home</h3>
-            <p>From paints to tools, switches to locks — we’ve got all your home needs covered under one roof.</p>
-          </div>
+      </div>
+      <div class="product-card fade-in">
+        <img src="https://i.ibb.co/B5RVsn5r/home-hardware.jpg" alt="Everything for Your Home">
+        <div class="content">
+          <h3>Everything for Your Home</h3>
+          <p>From paints to tools, switches to locks — we’ve got all your home needs covered under one roof.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- About Us -->
-  <section id="about" class="fade-in">
-    <div class="container about">
-      <img src="https://i.ibb.co/DHFZ7RVY/about-cartoon.jpg" alt="About Us Cartoon">
-      <div class="about-text">
-        <h2>About Us</h2>
-        <p>We are located on Main Road, near the old post office in Ghorasahan. At Siddhi Vinayak Traders, we pride ourselves on providing top-notch hardware products and friendly service for all your home and building needs.</p>
-      </div>
+  <section id="about" class="container about fade-in">
+    <img src="https://i.ibb.co/DHFZ7RVY/about-cartoon.jpg" alt="About Us Cartoon">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>We are located on Main Road, near the old post office in Ghorasahan. At Siddhi Vinayak Traders, we pride ourselves on providing top-notch hardware products and friendly service for all your home and building needs.</p>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="fade-in">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <ul class="contact-list">
-        <li><strong>Phone:</strong> 9097076607</li>
-        <li><strong>WhatsApp:</strong> 8969320710</li>
-        <li><strong>Email:</strong> <a href="mailto:sudeshkumar7607@gmail.com">sudeshkumar7607@gmail.com</a></li>
-      </ul>
-    </div>
+  <section id="contact" class="container fade-in">
+    <h2>Contact Us</h2>
+    <ul class="contact-list">
+      <li><strong>Phone:</strong> 9097076607</li>
+      <li><strong>WhatsApp:</strong> 8969320710</li>
+      <li><strong>Email:</strong> <a href="mailto:sudeshkumar7607@gmail.com">sudeshkumar7607@gmail.com</a></li>
+    </ul>
   </section>
 
   <script>
     // Fade-in on scroll
     document.addEventListener('DOMContentLoaded', () => {
-      const faders = document.querySelectorAll('.fade-in');
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
+      const els = document.querySelectorAll('.fade-in');
+      const obs = new IntersectionObserver((entries, o) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            o.unobserve(e.target);
           }
         });
       }, { threshold: 0.1 });
-
-      faders.forEach(el => observer.observe(el));
+      els.forEach(el => obs.observe(el));
     });
   </script>
 </body>
