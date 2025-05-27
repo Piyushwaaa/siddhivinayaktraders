@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Siddhi Vinayak Traders</title>
   <style>
+    /* Smooth scrolling */
     html { scroll-behavior: smooth; }
 
+    /* Reset & base */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -20,6 +22,7 @@
       margin: auto;
     }
 
+    /* Header/Nav */
     header {
       background: #111;
       color: #fff;
@@ -46,6 +49,7 @@
       font-size: 0.9rem;
     }
 
+    /* Hero */
     .hero {
       background: linear-gradient(135deg, #222, #444);
       color: #fff;
@@ -70,6 +74,7 @@
       background: #ff7733;
     }
 
+    /* Sections */
     section {
       padding: 3rem 0;
     }
@@ -80,6 +85,7 @@
       color: #222;
     }
 
+    /* Products Grid */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -108,6 +114,7 @@
       margin-bottom: 0.5rem;
     }
 
+    /* About Us */
     .about {
       display: flex;
       flex-direction: column;
@@ -119,7 +126,11 @@
       max-width: 250px;
       border-radius: 12px;
     }
+    .about-text {
+      max-width: 600px;
+    }
 
+    /* Contact */
     .contact-list {
       list-style: none;
       font-size: 1rem;
@@ -127,13 +138,11 @@
       text-align: center;
     }
 
+    /* Breakpoints */
     @media (min-width: 768px) {
       .about {
         flex-direction: row;
         text-align: left;
-      }
-      .about-text {
-        max-width: 600px;
       }
     }
   </style>
@@ -169,31 +178,31 @@
       <h2>Products</h2>
       <div class="products-grid">
         <div class="product-card">
-          <img src="https://i.imgur.com/fJjD2Q8.jpg" alt="Custom Color Mixing">
+          <img src="https://i.ibb.co/Q3wQCMmp/custom-color.jpg" alt="Custom Color Selection">
           <div class="content">
             <h3>Custom Color Selection</h3>
             <p>Choose any color you can imagine, our smart mixing machines deliver the exact shade instantly!</p>
           </div>
         </div>
         <div class="product-card">
-          <img src="https://i.imgur.com/E2tSx3n.jpg" alt="Tiles">
-          <div class="content">
-            <h3>Tiles</h3>
-            <p>Stylish and durable tiles to make your floors and walls stand out beautifully.</p>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="https://i.imgur.com/XeGkEGF.jpg" alt="Pipes">
+          <img src="https://i.ibb.co/277X9Pgt/pipes.jpg" alt="Pipes">
           <div class="content">
             <h3>Pipes</h3>
             <p>High-quality pipes for reliable water flow, strong and long-lasting for every home.</p>
           </div>
         </div>
         <div class="product-card">
-          <img src="https://i.imgur.com/X9jPMug.jpg" alt="Home Hardware">
+          <img src="https://i.ibb.co/dwxHcT6Y/tiles.jpg" alt="Tiles">
+          <div class="content">
+            <h3>Tiles</h3>
+            <p>Stylish and durable tiles to make your floors and walls stand out beautifully.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://i.ibb.co/B5RVsn5r/home-hardware.jpg" alt="Everything for Your Home">
           <div class="content">
             <h3>Everything for Your Home</h3>
-            <p>From paints to tools, switches to locks — we’ve got all your home needs covered under one roof.</p>
+            <p>From paints to tools, switches to locks, we’ve got all your home needs covered under one roof.</p>
           </div>
         </div>
       </div>
@@ -203,7 +212,7 @@
   <!-- About Us -->
   <section id="about">
     <div class="container about">
-      <img src="https://i.imgur.com/IqB3XqF.png" alt="Cartoon Worker">
+      <img src="https://i.ibb.co/DHFZ7RVY/about-cartoon.jpg" alt="About Us Cartoon">
       <div class="about-text">
         <h2>About Us</h2>
         <p>We are located on Main Road, near the old post office in Ghorasahan. At Siddhi Vinayak Traders, we pride ourselves on providing top-notch hardware products and friendly service for all your home and building needs.</p>
