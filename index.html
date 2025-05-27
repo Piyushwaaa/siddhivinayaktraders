@@ -9,7 +9,7 @@
     html { scroll-behavior: smooth; }
     body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #333; }
 
-    /* Logo/Header */
+    /* Header with logo only */
     header {
       background: #111;
       padding: 1rem;
@@ -22,18 +22,25 @@
       letter-spacing: 1px;
     }
 
-    /* Hero */
+    /* Hero: smaller height, keep text and button */
     .hero {
       position: relative;
       width: 100%;
-      min-height: 60vh;
-      background: linear-gradient(135deg, #222, #444),
+      min-height: 40vh;              /* Reduced height */
+      background: linear-gradient(135deg, rgba(34,34,34,0.85), rgba(68,68,68,0.85)),
                   url('https://i.ibb.co/your-hero-image.jpg') center center no-repeat;
       background-size: cover;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      text-align: center;
+      padding: 1rem;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
     .hero button {
       background: #e55400;
@@ -47,10 +54,10 @@
     }
     .hero button:hover { background: #ff7733; }
 
-    /* Container */
+    /* Container utility */
     .container { width: 90%; max-width: 1200px; margin: auto; }
 
-    /* Sections titles */
+    /* Section titles */
     section h2 {
       text-align: center;
       font-size: 2rem;
@@ -58,18 +65,11 @@
       color: #222;
     }
 
-    /* Fade-in */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* Fade-in animation */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* Products Grid */
+    /* Products grid */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -89,18 +89,11 @@
       object-fit: cover;
       display: block;
     }
-    .product-card .content {
-      padding: 1rem;
-    }
+    .product-card .content { padding: 1rem; }
     .product-card h3 { margin-bottom: .5rem; }
-    .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    /* Ensure hover works after fade-in */
-    .product-card.fade-in.visible:hover {
-      transform: translateY(-10px);
-    }
+    .product-card:hover { transform: translateY(-10px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    /* ensure hover works after fade-in */
+    .product-card.fade-in.visible:hover { transform: translateY(-10px); }
 
     /* About Us */
     .about {
@@ -124,7 +117,7 @@
       padding-bottom: 3rem;
     }
 
-    /* Breakpoints */
+    /* Responsive tweaks */
     @media (min-width: 768px) {
       .about { flex-direction: row; text-align: left; }
       .about-text { text-align: left; }
@@ -133,13 +126,14 @@
 </head>
 <body>
 
-  <!-- Logo/Header -->
+  <!-- Header -->
   <header class="fade-in">
     <div class="logo">Siddhi Vinayak Traders</div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero with title -->
   <section class="hero fade-in">
+    <h1>Your Reliable Hardware Partner</h1>
     <button onclick="location.href='#products'">Explore Our Products</button>
   </section>
 
@@ -198,7 +192,6 @@
   </section>
 
   <script>
-    // Fade-in on scroll
     document.addEventListener('DOMContentLoaded', () => {
       const els = document.querySelectorAll('.fade-in');
       const obs = new IntersectionObserver((entries, o) => {
