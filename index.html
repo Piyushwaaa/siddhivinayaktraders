@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Siddhi Vinayak Traders</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    color: #222;
+    line-height: 1.6;
+  }
+  header {
+    background: #2a3a53;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  header p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #aab8c2;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  section h2 {
+    margin-bottom: 1rem;
+    color: #2a3a53;
+    border-bottom: 2px solid #2a3a53;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+  }
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    color: #444;
+  }
+  footer {
+    background: #2a3a53;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Scroll Animation - JS adds visible class */
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Siddhi Vinayak Traders</h1>
+  <p>Your Trusted Hardware Store in Ghorasahan</p>
+</header>
+
+<main>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a reliable hardware shop located at Main Road, near the old post office, Ghorasahan. We supply high-quality tools, building materials, and daily-use hardware items.</p>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <ul>
+      <li>Tools & Equipment</li>
+      <li>Paints & Brushes</li>
+      <li>Pipes, Fittings & Taps</li>
+      <li>Electrical Items</li>
+      <li>Cement, Nails & More</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Call: 9097076607</p>
+    <p>WhatsApp: 8969320710</p>
+    <p>Address: Main Road, Near Old Post Office, Ghorasahan</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Siddhi Vinayak Traders</p>
+</footer>
+
+<script>
+  // Scroll animation: reveal sections when they come into view
+  function reveal() {
+    const sections = document.querySelectorAll('section');
+    const windowHeight = window.innerHeight;
+    sections.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      if (top < windowHeight - 100) {
+        section.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', reveal);
+  window.addEventListener('load', reveal);
+</script>
+
+</body>
+</html>
