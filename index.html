@@ -49,7 +49,8 @@
     nav ul li a:hover {
       color:#ffcc00;
     }
-
+    nav .menu-toggle { display:none; cursor:pointer; color:#fff; font-size:1.5rem; }
+    
     /* Header */
     header {
       height:60vh;
@@ -66,6 +67,18 @@
     }
     header p {
       font-size:1.2rem; font-weight:300;
+    }
+    header .btn {
+      margin-top:1rem;
+      background:#ffcc00; color:#2a3a53;
+      padding:0.8rem 1.5rem;
+      border:none; border-radius:5px;
+      font-weight:600;
+      cursor:pointer;
+      transition: background 0.3s;
+    }
+    header .btn:hover {
+      background:#e6b800;
     }
 
     /* Main sections */
@@ -87,10 +100,14 @@
       display:inline-block;
       padding-bottom:0.3rem;
     }
+    /* Gradient title for Custom Color */
+    .gradient-text {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-weight: bold;
+    }
     ul { margin-left:1.5rem; color:#444; }
-
-    /* Icons */
-    .icon { margin-right:0.5rem; color:#ffcc00; }
 
     /* Footer */
     footer {
@@ -100,56 +117,69 @@
 
     /* Responsive */
     @media (max-width:600px) {
-      header h1 { font-size:2.2rem; }
-      nav ul { flex-direction:column; background:#2a3a53; position:absolute; top:100%; right:0; display:none; }
+      nav ul { display:none; flex-direction:column; background:#2a3a53; position:absolute; top:100%; right:0; width:200px; }
       nav ul.show { display:flex; }
-      nav .menu-toggle { display:block; color:#fff; font-size:1.5rem; cursor:pointer; }
-    }
-    @media (min-width:601px) {
-      nav .menu-toggle { display:none; }
+      nav .menu-toggle { display:block; }
+      header h1 { font-size:2.2rem; }
     }
   </style>
 </head>
 
 <body>
   <nav>
-    <div class="logo"><i class="fas fa-tools"></i> SV Traders</div>
+    <div class="logo"><i class="fas fa-tools"></i> Siddhi Vinayak Traders</div>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
       <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <header id="home">
-    <h1>Siddhi Vinayak Traders</h1>
-    <p>Your Trusted Hardware Store in Ghorasahan</p>
+    <h1>Your Reliable Hardware Partner</h1>
+    <p>High-quality hardware, custom color solutions, and everything you need — all in one place.</p>
+    <button class="btn" onclick="location.href='#products'">Explore Our Products</button>
   </header>
 
   <main>
-    <section id="about">
-      <h2><i class="fas fa-info-circle icon"></i>About Us</h2>
-      <p>We are a reliable hardware shop located at Main Road, near the old post office, Ghorasahan. We supply high-quality tools, building materials, and daily use hardware items.</p>
-    </section>
-
     <section id="products">
-      <h2><i class="fas fa-box-open icon"></i>Our Products</h2>
+      <h2><i class="fas fa-box-open"></i> Products We Offer</h2>
       <ul>
-        <li>Tools & Equipment</li>
-        <li>Paints & Brushes</li>
-        <li>Pipes, Fittings & Taps</li>
-        <li>Electrical Items</li>
-        <li>Cement, Nails & More</li>
+        <li>
+          <span class="gradient-text">Custom Color Selection</span><br>
+          <em>Choose Any Color, We'll Make It!</em><br>
+          From bold reds to ocean blues, our machines mix the exact color you imagine, instantly and perfectly.
+        </li>
+        <li>
+          <strong>Tiles</strong><br>
+          <em>Tiles That Transform Spaces</em><br>
+          Durable, stylish, and available in countless designs, our tiles add beauty and strength to every room.
+        </li>
+        <li>
+          <strong>Pipes</strong><br>
+          <em>Built to Last, Made to Flow</em><br>
+          From plumbing to construction, our pipes come in all types and sizes, strong, long-lasting, and reliable.
+        </li>
+        <li>
+          <strong>Everything Needed for Your House</strong><br>
+          <em>One Stop for Every Home Solution</em><br>
+          Tools, paint, switches, locks, cement, you name it, we’ve got it.
+        </li>
       </ul>
     </section>
 
+    <section id="about">
+      <h2><i class="fas fa-info-circle"></i> About Us</h2>
+      <p>Siddhi Vinayak Traders is your go-to hardware store in Ghorasahan, Main Road near the old post office. We’re committed to quality, reliability, and exceptional service. Trusted by locals for years, we help you build better.</p>
+    </section>
+
     <section id="contact">
-      <h2><i class="fas fa-phone-volume icon"></i>Contact Us</h2>
-      <p><i class="fas fa-phone icon"></i>Call: 9097076607</p>
-      <p><i class="fab fa-whatsapp icon"></i>WhatsApp: 8969320710</p>
-      <p><i class="fas fa-map-marker-alt icon"></i>Address: Main Road, Near Old Post Office, Ghorasahan</p>
+      <h2><i class="fas fa-phone-volume"></i> Contact Us</h2>
+      <p><i class="fas fa-phone"></i> Call: 9097076607</p>
+      <p><i class="fab fa-whatsapp"></i> WhatsApp: 8969320710</p>
+      <p><i class="fas fa-envelope"></i> Email: sudeshkumar7607@gmail.com</p>
     </section>
   </main>
 
