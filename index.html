@@ -1,145 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Siddhi Vinayak Traders</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Google Fonts & FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 
+  <style>
+    :root {
+      --primary-dark: #1f2a38;
+      --primary-light: #f4f4f4;
+      --accent-red: #ff0000;
+      --accent-blue: #0000ff;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f7f9fc;
-      color: #222;
+      background: var(--primary-light);
+      color: #333;
     }
 
+    /* NAVIGATION */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:1000;
+      background: rgba(31, 42, 56, 0.8);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:1rem 2rem;
+    }
+    nav .logo {
+      color: #fff; font-size:1.4rem; font-weight:600;
+    }
+    nav ul {
+      list-style:none; display:flex; gap:2rem;
+    }
+    nav ul li a {
+      color:#fff; text-decoration:none; font-weight:400;
+      transition: color .3s;
+    }
+    nav ul li a:hover { color: #ffcc00; }
+    .menu-toggle { display:none; font-size:1.5rem; color:#fff; cursor:pointer; }
+
+    /* HERO */
     header {
-      background: linear-gradient(to right, #ff0000, #0000ff);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
+      height:100vh; position:relative;
+      background: url('https://picsum.photos/1600/900?blur=2') center/cover no-repeat;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; color:#fff;
     }
-
+    header::before {
+      content:''; position:absolute; inset:0;
+      background: rgba(31, 42, 56, 0.7);
+    }
+    header .hero-content {
+      position:relative; z-index:1; max-width:800px; padding:0 1rem;
+      animation: fadeInDown 1s ease-out both;
+    }
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+      font-size:3.2rem; line-height:1.2; margin-bottom:1rem;
+      text-transform: uppercase;
     }
-
     header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
+      font-size:1.2rem; margin-bottom:2rem; line-height:1.5;
+    }
+    header .btn {
+      background: linear-gradient(to right, var(--accent-red), var(--accent-blue));
+      color:#fff; padding:.8rem 2rem; border:none; border-radius:4px;
+      font-size:1rem; font-weight:600; cursor:pointer;
+      transition: opacity .3s;
+    }
+    header .btn:hover { opacity:.85; }
+
+    /* SECTIONS BASE */
+    section {
+      padding:4rem 2rem; max-width:1100px; margin:0 auto;
+      opacity:0; transform: translateY(40px);
+      transition: .6s ease-out;
+    }
+    section.visible { opacity:1; transform: translateY(0); }
+
+    section h2 {
+      font-size:2rem; margin-bottom:2rem; position:relative;
+    }
+    section h2::after {
+      content:''; width:60px; height:4px; background: var(--accent-red);
+      position:absolute; bottom:-8px; left:0;
     }
 
-    .section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
+    /* PRODUCTS GRID */
+    .products-grid {
+      display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap:2rem;
+    }
+    .product-card {
+      background:#fff; border-radius:8px; padding:2rem;
+      text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      transition: transform .3s;
+    }
+    .product-card:hover { transform: translateY(-5px); }
+    .product-card .icon-circle {
+      width:60px; height:60px; margin:0 auto 1rem;
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      background: var(--primary-dark); color:#fff; font-size:1.5rem;
+    }
+    .product-card .title {
+      font-size:1.1rem; margin-bottom:.5rem; font-weight:600;
+    }
+    .product-card .title.gradient {
+      background: linear-gradient(to right, var(--accent-red), var(--accent-blue));
+      -webkit-background-clip: text; -webkit-text-fill-color:transparent;
+    }
+    .product-card p {
+      font-size: .95rem; color:#555; line-height:1.4;
     }
 
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      border-left: 5px solid #ff0000;
-      padding-left: 1rem;
-    }
-
-    .product-list li {
-      margin-bottom: 2rem;
-    }
-
-    .product-list span {
-      font-size: 1.2rem;
-      font-weight: bold;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
-
-    .gradient-text {
-      background: linear-gradient(to right, red, blue);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
+    /* ABOUT & CONTACT PANELS */
     .about, .contact {
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 2rem;
+      background:#fff; border-radius:8px;
+      padding:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);
     }
+    .contact p { margin-bottom:1rem; font-size:1rem; }
+    .contact i { margin-right:.5rem; color: var(--accent-red); }
 
+    /* FOOTER */
     footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      background: var(--primary-dark); color:#fff;
+      text-align:center; padding:2rem 1rem; margin-top:2rem;
+      font-size:.9rem;
     }
 
-    @media(max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
+    /* ANIMATIONS */
+    @keyframes fadeInDown {
+      from { opacity:0; transform: translateY(-20px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
 
-      .section h2 {
-        font-size: 1.5rem;
+    /* RESPONSIVE */
+    @media(max-width:768px) {
+      .menu-toggle { display:block; }
+      nav ul { display:none; position:absolute; top:100%; right:2rem;
+        background: rgba(31, 42, 56, 0.9); flex-direction:column; padding:1rem; border-radius:8px;
       }
+      nav ul.show { display:flex; }
+      header h1 { font-size:2.4rem; }
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Siddhi Vinayak Traders</h1>
-    <p>Your reliable hardware partner in Ghorasahan — offering everything from tiles to custom colors!</p>
+  <nav>
+    <div class="logo"><i class="fas fa-hammer"></i> Siddhi Vinayak Traders</div>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <div class="hero-content">
+      <h1>YOUR RELIABLE HARDWARE PARTNER</h1>
+      <p>High-quality hardware, custom color solutions, and everything you need — all in one place.</p>
+      <button class="btn" onclick="location.href='#products'">Explore Products</button>
+    </div>
   </header>
 
-  <section class="section" id="products">
+  <section id="products">
     <h2>Products We Offer</h2>
-    <ul class="product-list">
-      <li>
-        <span class="gradient-text">Custom Color Selection</span><br>
-        Choose any color you can imagine — our smart mixing machines deliver the exact shade instantly!
-      </li>
-      <li>
-        <span>Tiles</span><br>
-        Stylish and durable tiles to make your floors and walls stand out beautifully.
-      </li>
-      <li>
-        <span>Pipes</span><br>
-        High-quality pipes for reliable water flow, strong and long-lasting for every home.
-      </li>
-      <li>
-        <span>Everything Needed for Your House</span><br>
-        From paints to tools, switches to locks — we’ve got all your home needs covered in one shop.
-      </li>
-    </ul>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="icon-circle"><i class="fas fa-palette"></i></div>
+        <div class="title gradient">Custom Color Selection</div>
+        <p>Choose any color you can imagine — our smart mixing machines deliver the exact shade instantly!</p>
+      </div>
+      <div class="product-card">
+        <div class="icon-circle"><i class="fas fa-th-large"></i></div>
+        <div class="title">Tiles</div>
+        <p>Stylish and durable tiles to make your floors and walls stand out beautifully.</p>
+      </div>
+      <div class="product-card">
+        <div class="icon-circle"><i class="fas fa-tint"></i></div>
+        <div class="title">Pipes</div>
+        <p>High-quality pipes for reliable water flow, strong and long-lasting for every home.</p>
+      </div>
+      <div class="product-card">
+        <div class="icon-circle"><i class="fas fa-home"></i></div>
+        <div class="title">Everything for Your Home</div>
+        <p>From paints to tools, switches to locks — we’ve got all your home needs covered under one roof.</p>
+      </div>
+    </div>
   </section>
 
-  <section class="section about" id="about">
+  <section id="about" class="about">
     <h2>About Us</h2>
     <p><strong>Shop Name:</strong> Siddhi Vinayak Traders<br>
-    <strong>Type:</strong> Hardware Store<br>
-    <strong>Location:</strong> Ghorasahan, Main Road, Near Old Post Office<br>
-    Trusted by locals, we provide top-quality materials and unbeatable service for everything your house needs.</p>
+       <strong>Type:</strong> Hardware Store<br>
+       <strong>Location:</strong> Ghorasahan, Main Road, Near Old Post Office<br>
+       Trusted by locals for years, we provide top-quality materials and unbeatable service for everything your house needs.
+    </p>
   </section>
 
-  <section class="section contact" id="contact">
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p><strong>Call:</strong> 9097076607</p>
-    <p><strong>WhatsApp:</strong> 8969320710</p>
-    <p><strong>Email:</strong> sudeshkumar7607@gmail.com</p>
+    <p><i class="fas fa-phone-volume"></i> 9097076607</p>
+    <p><i class="fab fa-whatsapp"></i> 8969320710</p>
+    <p><i class="fas fa-envelope"></i> sudeshkumar7607@gmail.com</p>
   </section>
 
   <footer>
     &copy; 2025 Siddhi Vinayak Traders. All rights reserved.
   </footer>
 
+  <script>
+    // mobile menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const menu   = document.querySelector('nav ul');
+    toggle.addEventListener('click', () => menu.classList.toggle('show'));
+
+    // reveal on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('section').forEach(s => observer.observe(s));
+  </script>
 </body>
 </html>
