@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Siddhi Vinayak Traders</title>
   <style>
     /* Smooth scroll */
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       padding: 0;
@@ -33,13 +35,13 @@
     .hero {
       position: relative;
       width: 100%;
-      min-height: 40vh; /* Adjust as needed */
+      min-height: 50vh; /* Adjusted for multiline text */
       background: linear-gradient(
-                   135deg,
-                   rgba(34, 34, 34, 0.85),
-                   rgba(68, 68, 68, 0.85)
-                 ),
-                 url('https://i.ibb.co/84MN5pv8/adjustable-wrench.jpg') no-repeat center right;
+          135deg,
+          rgba(34, 34, 34, 0.85),
+          rgba(68, 68, 68, 0.85)
+        ),
+        url('https://i.ibb.co/84MN5pv8/adjustable-wrench.jpg') no-repeat center right;
       background-size: cover;
       display: flex;
       align-items: center;
@@ -53,8 +55,12 @@
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
     .hero-content h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin: 0 0 1rem 0;
+    }
+    .hero-content h1 span {
+      display: block;
     }
     .hero-content button {
       background: #e55400;
@@ -191,18 +197,30 @@
       .hero {
         background-position: center;
         padding-left: 2%;
+        min-height: 45vh;
       }
       .hero-content h1 {
-        font-size: 1.75rem;
+        font-size: 2rem;
       }
       .about-footer {
         font-size: 0.9rem;
       }
     }
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 40vh;
+      }
+      .hero-content h1 {
+        font-size: 1.75rem;
+      }
+      .hero-content button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <header class="fade-in">
     <div class="logo">Siddhi Vinayak Traders</div>
@@ -211,7 +229,11 @@
   <!-- Hero -->
   <section class="hero fade-in">
     <div class="hero-content">
-      <h1>Your Reliable Hardware Partner</h1>
+      <h1>
+        <span>Your Reliable</span>
+        <span>Hardware</span>
+        <span>Partner</span>
+      </h1>
       <button onclick="location.href='#products'">Explore Our Products</button>
     </div>
   </section>
@@ -221,31 +243,39 @@
     <h2>Products</h2>
     <div class="products-grid">
       <div class="product-card fade-in">
-        <img src="https://i.ibb.co/Q3wQCMmp/custom-color.jpg" alt="Custom Color Selection">
+        <img src="https://i.ibb.co/Q3wQCMmp/custom-color.jpg" alt="Custom Color Selection" />
         <div class="content">
           <h3>Custom Color Selection</h3>
-          <p>Choose any color you can imagine, our smart mixing machines deliver the exact shade instantly!</p>
+          <p>
+            Choose any color you can imagine, our smart mixing machines deliver the exact shade instantly!
+          </p>
         </div>
       </div>
       <div class="product-card fade-in">
-        <img src="https://i.ibb.co/277X9Pgt/pipes.jpg" alt="Pipes">
+        <img src="https://i.ibb.co/277X9Pgt/pipes.jpg" alt="Pipes" />
         <div class="content">
           <h3>Pipes</h3>
-          <p>High-quality pipes for reliable water flow, strong and long-lasting for every home.</p>
+          <p>
+            High-quality pipes for reliable water flow, strong and long-lasting for every home.
+          </p>
         </div>
       </div>
       <div class="product-card fade-in">
-        <img src="https://i.ibb.co/dwxHcT6Y/tiles.jpg" alt="Tiles">
+        <img src="https://i.ibb.co/dwxHcT6Y/tiles.jpg" alt="Tiles" />
         <div class="content">
           <h3>Tiles</h3>
-          <p>Stylish and durable tiles to make your floors and walls stand out beautifully.</p>
+          <p>
+            Stylish and durable tiles to make your floors and walls stand out beautifully.
+          </p>
         </div>
       </div>
       <div class="product-card fade-in">
-        <img src="https://i.ibb.co/B5RVsn5r/home-hardware.jpg" alt="Everything for Your Home">
+        <img src="https://i.ibb.co/B5RVsn5r/home-hardware.jpg" alt="Everything for Your Home" />
         <div class="content">
           <h3>Everything for Your Home</h3>
-          <p>From paints to tools, switches to locks — we’ve got all your home needs covered under one roof.</p>
+          <p>
+            From paints to tools, switches to locks — we’ve got all your home needs covered under one roof.
+          </p>
         </div>
       </div>
     </div>
@@ -253,10 +283,14 @@
 
   <!-- About Us -->
   <section id="about" class="container about fade-in">
-    <img src="https://i.ibb.co/DHFZ7RVY/about-cartoon.jpg" alt="About Us Cartoon">
+    <img src="https://i.ibb.co/DHFZ7RVY/about-cartoon.jpg" alt="About Us Cartoon" />
     <div class="about-text">
       <h2>About Us</h2>
-      <p>We are located on Main Road, near the old post office in Ghorasahan. At Siddhi Vinayak Traders, we pride ourselves on providing top-notch hardware products and friendly service for all your home and building needs.</p>
+      <p>
+        We are located on Main Road, near the old post office in Ghorasahan. At Siddhi Vinayak Traders,
+        we pride ourselves on providing top-notch hardware products and friendly service for all your
+        home and building needs.
+      </p>
       <p class="owner">Owner: Sudesh Kumar</p>
     </div>
 
@@ -274,7 +308,10 @@
     <ul class="contact-list">
       <li><strong>Phone:</strong> 9097076607</li>
       <li><strong>WhatsApp:</strong> 8969320710</li>
-      <li><strong>Email:</strong> <a href="mailto:sudeshkumar7607@gmail.com">sudeshkumar7607@gmail.com</a></li>
+      <li>
+        <strong>Email:</strong>
+        <a href="mailto:sudeshkumar7607@gmail.com">sudeshkumar7607@gmail.com</a>
+      </li>
     </ul>
   </section>
 
@@ -282,16 +319,19 @@
     // Fade-in on scroll
     document.addEventListener('DOMContentLoaded', () => {
       const els = document.querySelectorAll('.fade-in');
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      els.forEach(el => observer.observe(el));
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      els.forEach((el) => observer.observe(el));
     });
   </script>
 </body>
-    </html>
+</html>
