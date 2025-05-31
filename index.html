@@ -39,14 +39,14 @@
     /* Hero */
     .hero {
       position: relative;
-      width: 100%;
+      width: 100vw;
       min-height: 50vh;
-      background: url('https://i.ibb.co/84MN5pv8/adjustable-wrench.jpg') no-repeat center right;
-      background-size: contain;
+      background: url('https://i.ibb.co/84MN5pv8/adjustable-wrench.jpg') no-repeat right center;
+      background-size: cover;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      padding: 2rem 5%;
+      padding-left: 5%;
       text-align: left;
     }
     .hero-content {
@@ -103,7 +103,8 @@
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease,
+        transform 0.8s ease;
       opacity: 0;
       transform: translateY(20px);
     }
@@ -183,7 +184,7 @@
     /* Responsive tweaks */
     @media (max-width: 768px) {
       .hero {
-        background-position: center;
+        background-position: center center;
         padding: 2rem;
       }
       .hero-content h1 {
