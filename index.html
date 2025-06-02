@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Siddhi Vinayak Traders</title>
-  <!-- Google Font for a cool look -->
+  <!-- Google Font for a clean, modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     /* Reset & base */
@@ -45,7 +45,7 @@
       width: 100vw;
       min-height: 50vh;
       background: url('https://i.ibb.co/84MN5pv8/adjustable-wrench.jpg') no-repeat right center;
-      background-size: contain;
+      background-size: contain; /* Use exact image size */
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -136,14 +136,18 @@
     }
     .product-card h3 {
       margin-bottom: 0.5rem;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+    }
+    .product-card p {
+      font-size: 1rem;
+      color: #555;
     }
 
     /* Feedbacks Section */
     #feedbacks {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(230, 245, 255, 0.6);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
       padding: 3rem 5%;
       margin-bottom: 3rem;
     }
@@ -160,9 +164,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-    .feedback-carousel-wrapper {
-      position: relative;
-    }
     .feedback-carousel {
       display: flex;
       gap: 1rem;
@@ -173,10 +174,10 @@
     .feedback-card {
       flex: 0 0 80%;
       min-width: 80%;
-      background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       padding: 1.5rem;
       scroll-snap-align: start;
@@ -192,29 +193,12 @@
       font-size: 1rem;
       font-style: italic;
       margin-bottom: 1rem;
+      color: #444;
     }
     .feedback-card .person {
       text-align: right;
       font-weight: 500;
-    }
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      border: none;
-      font-size: 2rem;
-      padding: 0.5rem 0.75rem;
-      cursor: pointer;
-      z-index: 10;
-      border-radius: 50%;
-    }
-    .carousel-arrow.left {
-      left: 10px;
-    }
-    .carousel-arrow.right {
-      right: 10px;
+      color: #111;
     }
 
     /* About Us */
@@ -332,32 +316,44 @@
   <section id="products" class="container">
     <h2>Products</h2>
     <div class="products-grid">
+      <!-- Color -->
       <div class="product-card">
-        <img src="https://i.ibb.co/Q3wQCMmp/custom-color.jpg" alt="Custom Color Selection" />
+        <img src="https://i.ibb.co/Q3wQCMmp/custom-color.jpg" alt="Color" />
         <div class="content">
-          <h3>Custom Color Selection</h3>
-          <p>Choose any color you can imagine, our smart mixing machines deliver the exact shade instantly!</p>
+          <h3>Color</h3>
+          <p>Discover a curated selection of premium paints and finishes, formulated to enhance every corner of your home with vibrant, lasting hues.</p>
         </div>
       </div>
+      <!-- Pipes -->
       <div class="product-card">
         <img src="https://i.ibb.co/277X9Pgt/pipes.jpg" alt="Pipes" />
         <div class="content">
           <h3>Pipes</h3>
-          <p>High-quality pipes for reliable water flow, strong and long-lasting for every home.</p>
+          <p>High-quality pipes designed for durability and reliability—ideal for plumbing, irrigation, and construction applications in any setting.</p>
         </div>
       </div>
+      <!-- Tiles -->
       <div class="product-card">
         <img src="https://i.ibb.co/dwxHcT6Y/tiles.jpg" alt="Tiles" />
         <div class="content">
           <h3>Tiles</h3>
-          <p>Stylish and durable tiles to make your floors and walls stand out beautifully.</p>
+          <p>Stylish and robust tiles in a variety of textures and colors to transform floors and walls into elegant, easy-to-maintain surfaces.</p>
         </div>
       </div>
+      <!-- Bathroom Items -->
       <div class="product-card">
-        <img src="https://i.ibb.co/B5RVsn5r/home-hardware.jpg" alt="Everything for Your Home" />
+        <img src="https://i.ibb.co/7rQrWF0/bathroom-items.jpg" alt="Bathroom Items" />
         <div class="content">
-          <h3>Everything for Your Home</h3>
-          <p>From paints to tools, switches to locks — we’ve got all your home needs covered under one roof.</p>
+          <h3>Bathroom Items</h3>
+          <p>Browse our range of bathroom essentials—from faucets and showerheads to sanitaryware—combining functionality with modern design.</p>
+        </div>
+      </div>
+      <!-- House Building Items -->
+      <div class="product-card">
+        <img src="https://i.ibb.co/GP2jN3F/house-building-items.jpg" alt="House Building Items" />
+        <div class="content">
+          <h3>House Building Items</h3>
+          <p>Find everything you need for construction: cement, bricks, reinforcement bars, and more, sourced from trusted brands for lasting strength.</p>
         </div>
       </div>
     </div>
@@ -366,27 +362,23 @@
   <!-- Feedbacks -->
   <section id="feedbacks">
     <h2 class="feedbacks-title">Feedbacks</h2>
-    <div class="feedback-carousel-wrapper">
-      <button class="carousel-arrow left">&#8249;</button>
-      <div class="feedback-carousel">
-        <div class="feedback-card">
-          <blockquote>"Excellent selection of products and friendly staff!"</blockquote>
-          <div class="person">— Priya</div>
-        </div>
-        <div class="feedback-card">
-          <blockquote>"Fast mixing of custom colors, very satisfied!"</blockquote>
-          <div class="person">— Manish</div>
-        </div>
-        <div class="feedback-card">
-          <blockquote>"Quality pipes and tiles, highly recommend."</blockquote>
-          <div class="person">— Sunita</div>
-        </div>
-        <div class="feedback-card">
-          <blockquote>"Great prices and top-notch service every time."</blockquote>
-          <div class="person">— Rohit</div>
-        </div>
+    <div class="feedback-carousel">
+      <div class="feedback-card">
+        <blockquote>"Excellent selection and friendly advice whenever I visit!"</blockquote>
+        <div class="person">— Priya</div>
       </div>
-      <button class="carousel-arrow right">&#8250;</button>
+      <div class="feedback-card">
+        <blockquote>"Pipes and tiles last longer than expected. Great quality!"</blockquote>
+        <div class="person">— Manish</div>
+      </div>
+      <div class="feedback-card">
+        <blockquote>"Bathroom items fit perfectly and the staff was very helpful."</blockquote>
+        <div class="person">— Sunita</div>
+      </div>
+      <div class="feedback-card">
+        <blockquote>"House building supplies available in one place saved me time and effort."</blockquote>
+        <div class="person">— Rohit</div>
+      </div>
     </div>
   </section>
 
@@ -395,15 +387,9 @@
     <img src="https://i.ibb.co/DHFZ7RVY/about-cartoon.jpg" alt="About Us Cartoon" />
     <div class="about-text">
       <h2>About Us</h2>
-      <p>
-        Siddhi Vinayak Traders is located on Main Road, near the old post office in Ghorasahan.
-      </p>
-      <p>
-        The shop is owned by <span class="owner">Sudesh Kumar</span>.
-      </p>
-      <p>
-        We pride ourselves on providing top-notch hardware products and friendly service for all your home and building needs.
-      </p>
+      <p>Siddhi Vinayak Traders is located on Main Road, near the old post office in Ghorasahan.</p>
+      <p>The shop is owned by <span class="owner">Sudesh Kumar</span>.</p>
+      <p>We pride ourselves on providing top-notch hardware products and friendly service for all your home and building needs.</p>
     </div>
   </section>
 
@@ -430,31 +416,15 @@
         });
       }, options);
 
-      // Observe product cards
-      document.querySelectorAll('.product-card').forEach(el => observer.observe(el));
-      // Observe section titles
+      // Section titles
       document.querySelectorAll('section h2').forEach(el => observer.observe(el));
-      // Observe feedback cards
+      // Product cards
+      document.querySelectorAll('.product-card').forEach(el => observer.observe(el));
+      // Feedback cards
       document.querySelectorAll('.feedback-card').forEach(el => observer.observe(el));
-      // Observe the feedbacks title
-      observer.observe(document.querySelector('.feedbacks-title'));
-      // Observe About and Contact
+      // About and Contact
       observer.observe(document.querySelector('.about'));
       observer.observe(document.querySelector('.contact-list'));
-    });
-
-    // Carousel navigation
-    document.addEventListener('DOMContentLoaded', () => {
-      const carousel = document.querySelector('.feedback-carousel');
-      const btnLeft = document.querySelector('.carousel-arrow.left');
-      const btnRight = document.querySelector('.carousel-arrow.right');
-
-      btnLeft.addEventListener('click', () => {
-        carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
-      });
-      btnRight.addEventListener('click', () => {
-        carousel.scrollBy({ left: carousel.offsetWidth, behavior: 'smooth' });
-      });
     });
   </script>
 </body>
