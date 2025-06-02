@@ -43,19 +43,23 @@
     .hero {
       position: relative;
       width: 100vw;
-      min-height: 50vh;
-      background: url('https://i.ibb.co/84MN5pv8/adjustable-wrench.jpg') no-repeat right center;
-      background-size: contain; /* Use exact image size */
       display: flex;
-      align-items: center;
       justify-content: flex-start;
-      padding-left: 5%;
-      text-align: left;
+      align-items: center;
+      /* we will use an <img> to maintain exact dimensions */
+    }
+    .hero img {
+      width: 100%;
+      max-width: 872px;       /* exact width */
+      height: auto;           /* maintain aspect ratio */
+      display: block;
     }
     .hero-content {
-      max-width: 600px;
+      position: absolute;
+      left: 5%;
       color: #ffffff;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
     }
     .hero-content h1 {
       font-size: 2.5rem;
@@ -145,9 +149,7 @@
 
     /* Feedbacks Section */
     #feedbacks {
-      background: rgba(230, 245, 255, 0.6);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
+      background: #b5efff; /* glacious color */
       padding: 3rem 5%;
       margin-bottom: 3rem;
     }
@@ -174,9 +176,7 @@
     .feedback-card {
       flex: 0 0 80%;
       min-width: 80%;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
+      background: #fff;
       border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       padding: 1.5rem;
@@ -254,10 +254,6 @@
 
     /* Responsive tweaks */
     @media (max-width: 768px) {
-      .hero {
-        background-position: center center;
-        padding: 2rem;
-      }
       .hero-content h1 {
         font-size: 2rem;
       }
@@ -276,10 +272,6 @@
       }
     }
     @media (max-width: 480px) {
-      .hero {
-        min-height: 40vh;
-        padding: 1.5rem;
-      }
       .hero-content h1 {
         font-size: 1.75rem;
       }
@@ -302,6 +294,7 @@
 
   <!-- Hero -->
   <section class="hero">
+    <img src="https://i.ibb.co/fwNzj6D/fwNzj6D.jpg" width="872" height="536" alt="Adjustable Wrench" />
     <div class="hero-content">
       <h1>
         <span>Your Reliable</span>
@@ -429,3 +422,4 @@
   </script>
 </body>
 </html>
+```0
