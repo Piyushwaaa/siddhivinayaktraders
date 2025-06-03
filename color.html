@@ -1,1 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color • Siddhi Vinayak Traders</title>
+  <!-- Poppins font for consistency -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f3faff;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
+    /* Header */
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #e55400;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    /* Page Title */
+    h1.page-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+
+    /* Brand Section */
+    .brand-section {
+      margin-bottom: 3rem;
+    }
+    .brand-section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: #444;
+      text-align: left;
+    }
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .brand-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .brand-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+    .brand-card img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 0.75rem;
+    }
+    .brand-card p {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    /* Products Section */
+    .product-section {
+      margin-bottom: 3rem;
+    }
+    .product-section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: #444;
+      text-align: left;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+    .product-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .product-card .content {
+      padding: 1rem;
+    }
+    .product-card .content h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+    .product-card .content p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .brand-grid, .product-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      .brand-grid, .product-grid {
+        grid-template-columns: 1fr;
+      }
+      h1.page-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Siddhi Vinayak Traders</div>
+    <a href="index.html" class="back-link">‹ Back to Home</a>
+  </header>
+
+  <div class="container">
+    <!-- Page Title -->
+    <h1 class="page-title">Color</h1>
+
+    <!-- Brands Section -->
+    <section class="brand-section">
+      <h2>Brands We Carry</h2>
+      <div class="brand-grid">
+        <!-- Nerolac -->
+        <div class="brand-card">
+          <img src="https://via.placeholder.com/80?text=Nerolac" alt="Nerolac Logo" />
+          <p><strong>Nerolac</strong><br/>Renowned for fade-resistant, vibrant finishes that last.</p>
+        </div>
+        <!-- Asian Paints -->
+        <div class="brand-card">
+          <img src="https://via.placeholder.com/80?text=Asian+Paints" alt="Asian Paints Logo" />
+          <p><strong>Asian Paints</strong><br/>Industry leader offering quality coatings for every surface.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="product-section">
+      <h2>Our Color Collections</h2>
+      <div class="product-grid">
+        <!-- Premium Interior Emulsion -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/300x140?text=Interior+Emulsion" alt="Interior Emulsion" />
+          <div class="content">
+            <h3>Premium Interior Emulsion</h3>
+            <p>Silk-smooth finish, low VOC, and mildew-resistant—perfect for living rooms and bedrooms.</p>
+          </div>
+        </div>
+        <!-- Weatherproof Exterior Paint -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/300x140?text=Exterior+Paint" alt="Exterior Paint" />
+          <div class="content">
+            <h3>Weatherproof Exterior Paint</h3>
+            <p>Durable formula that resists fading, cracking, and peeling—ideal for all seasons.</p>
+          </div>
+        </div>
+        <!-- High-Gloss Enamel -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/300x140?text=High-Gloss+Enamel" alt="High-Gloss Enamel" />
+          <div class="content">
+            <h3>High-Gloss Enamel</h3>
+            <p>Hard-wearing, easy-to-clean finish for doors, trims, and metal surfaces.</p>
+          </div>
+        </div>
+        <!-- Satin Finish Wood Stain -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/300x140?text=Wood+Stain" alt="Wood Stain" />
+          <div class="content">
+            <h3>Satin Finish Wood Stain</h3>
+            <p>Enhances natural wood grain with a satin sheen—perfect for cabinets and furniture.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+  </html>
